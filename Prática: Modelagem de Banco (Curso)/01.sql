@@ -1,6 +1,6 @@
 CREATE TYPE "grade" AS ENUM( "Abaixo das expectativas", "Dentro das Expectativas", "Acima das Expectativas");
 
-CREATE TABLE "public.students" (
+CREATE TABLE "students" (
 	"id" serial PRIMARY KEY,
 	"name" TEXT NOT NULL,
 	"email" TEXT NOT NULL UNIQUE,
@@ -8,12 +8,12 @@ CREATE TABLE "public.students" (
 	"class_id" integer NOT NULL,
 );
 
-CREATE TABLE "public.classes" (
+CREATE TABLE "classes" (
 	"id" serial NOT NULL,
 	"code" TEXT NOT NULL UNIQUE,
 );
 
-CREATE TABLE "public.transfer_history" (
+CREATE TABLE "transfer_history" (
 	"id" serial PRIMARY KEY,
 	"students_id" integer NOT NULL,
 	"going_out_id" integer NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE "public.transfer_history" (
 	"end" DATE NOT NULL,
 );
 
-CREATE TABLE "public.projects" (
+CREATE TABLE "projects" (
 	"id" serial PRIMARY KEY,
 	"name" TEXT NOT NULL UNIQUE,
 	"released" DATE NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE "public.projects" (
 	"module_id" integer NOT NULL,
 );
 
-CREATE TABLE "public.modules" (
+CREATE TABLE "modules" (
 	"id" serial PRIMARY KEY,
 	"name" TEXT NOT NULL UNIQUE,
 );
